@@ -2,7 +2,7 @@ import fileinput
 
 
 
-def day1part2Chat():
+def day1part2Working():
     password = 0
     position = 50
 
@@ -12,9 +12,7 @@ def day1part2Chat():
 
         oldPosition = position
 
-        # Treffer während der Rotation zählen
         if RL == 'R':
-            # wie viele Klicks bis zum nächsten 0?
             first = (100 - oldPosition) % 100
             if first == 0:
                 first = 100
@@ -32,7 +30,6 @@ def day1part2Chat():
 
             position -= value
 
-        # Endposition normalisieren
         position %= 100
 
     print(password)
@@ -63,5 +60,5 @@ def day1part2():
     print(password)
     
         
-day1part2()
+day1part2Working()
 
