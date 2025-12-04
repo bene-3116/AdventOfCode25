@@ -28,9 +28,10 @@ def Day3Part2():
         maxes = [0 for x in range(0,12)]
         for i in range(0, len(bank)-11):
             for j in range(-11,1):
-                if(bank[i-j] > maxes[-j]):
-                    for k in range(-j,len(maxes)):
-                        maxes[k] = bank[i+k]
+                if(bank[i-j] <= maxes[-j]):
+                    continue
+                for k in range(-j,len(maxes)):
+                    maxes[k] = bank[i+k]
         joltages.append(int("".join([str(x) for x in maxes])))
     print(sum(joltages))
 
